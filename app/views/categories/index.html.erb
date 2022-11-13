@@ -1,0 +1,8 @@
+<h2>Categories</h2>
+
+<%- @category_array.each do |category| %>
+  <div class="row">
+    <%= link_to category.name, category_path(category), class: 'nav-link link-secondary w-25' %>
+  </div>
+<% end %>
+
