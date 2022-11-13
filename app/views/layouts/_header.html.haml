@@ -1,0 +1,26 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  .container-fluid
+    = link_to root_path, class: 'navbar-brand' do
+      TestProject
+    %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        %li.nav-item
+          %a.nav-link{:href => "#"} Profile
+        %li.nav-item
+          %a.nav-link{:href => "#"} Messages
+        %li.nav-item
+          = link_to categories_path, class: 'nav-link' do
+            Choose type of doctor
+        %li.nav-item
+          %a.nav-link{:href => "#"} My patients
+        %li.nav-item
+          = link_to new_user_session_path, class: 'nav-link' do
+            Log in
+        %li.nav-item
+          = link_to new_user_registration_path, class: 'nav-link' do
+            Sign up
+        %li.nav-item
+          = link_to destroy_user_session_path, class: 'nav-link', method: 'delete' do
+            Logout

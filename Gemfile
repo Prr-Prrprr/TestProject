@@ -29,6 +29,7 @@ gem 'net-smtp'
 gem 'devise'
 gem 'cancancan'
 gem 'activeadmin'
+gem 'haml'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
