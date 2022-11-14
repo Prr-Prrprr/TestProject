@@ -23,4 +23,8 @@ class User < ApplicationRecord
   def admin?
     role == 'admin'
   end
+
+  def doctor?
+    role == 'doctor'
+  end
 end

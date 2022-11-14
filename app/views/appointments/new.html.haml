@@ -1,0 +1,10 @@
+%h2 Your appointment
+
+%form.w-25
+  %input.form-control{"aria-label" => "Disabled input example", disabled: "disabled", readonly: "readonly", type: "text", value: @doctor.username}/
+  %br
+  %input.form-control{"aria-label" => "Disabled input example", disabled: "disabled", readonly: "readonly", type: "text", value: @month}/
+.card-footer
+%br
+  .btn.btn-primary
+    Create

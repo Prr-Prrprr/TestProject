@@ -1,0 +1,5 @@
+.h2
+  Create appointment
+
+= month_calendar do |month|
+  = link_to month, new_appointment_path(doctor_id: params[:doctor_id], month: month), class: 'btn btn-primary'
