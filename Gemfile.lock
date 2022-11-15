@@ -250,6 +250,9 @@ GEM
     semantic_range (3.0.0)
     simple_calendar (2.4.3)
       rails (>= 3.0)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     spring (4.1.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
@@ -312,6 +315,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (>= 6)
   simple_calendar
+  simple_form
   spring
   turbolinks (~> 5)
   tzinfo-data

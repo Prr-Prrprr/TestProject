@@ -1,10 +1,16 @@
 %h2 Your appointment
 
-%form.w-25
-  %input.form-control{"aria-label" => "Disabled input example", disabled: "disabled", readonly: "readonly", type: "text", value: @doctor.username}/
+= simple_form_for @appointment do |f|
+  = f.label 'Doctor: '
+  = f.label @doctor.username
+  = f.hidden_field :doctor_id, value: @doctor.id
   %br
-  %input.form-control{"aria-label" => "Disabled input example", disabled: "disabled", readonly: "readonly", type: "text", value: @month}/
-.card-footer
-%br
-  .btn.btn-primary
-    Create
+  = f.label 'Patient: '
+  = f.label current_user.username
+  = f.hidden_field :patient_id, value: current_user.id
+  %br
+  = f.label 'Date: '
+  = f.label @month
+  = f.hidden_field :date, as: :date, value: @month
+  %br
+  = f.submit 'Create', class: 'btn btn-primary'

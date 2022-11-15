@@ -8,6 +8,6 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find_by(id: params[:id])
-    @doctors = @category.doctors
+    @doctors = @category.doctors.available_doctors
   end
 end
