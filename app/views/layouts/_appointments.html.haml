@@ -12,5 +12,14 @@
       - if current_user.role == 'doctor'
         = 'Patient: '
         = a.patient.username
+      - if a.recommendation
+        .row
+        = 'Recommendation: '
+        = a.recommendation
+      - elsif current_user.role == 'doctor'
+        .row
+        = link_to 'Give recommendation', edit_appointment_path(id: a.id)
     .card-footer
       = 'Status: '
+      = a.status
+

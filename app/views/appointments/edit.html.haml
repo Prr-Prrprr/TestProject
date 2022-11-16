@@ -1,0 +1,4 @@
+= simple_form_for @appointment do |f|
+  = f.input :recommendation
+  = f.hidden_field :status, value: 'closed'
+  = f.submit 'Send'

@@ -24,9 +24,24 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def edit
+    find_appointment
+  end
+
+  def update
+    find_appointment
+    if @appointment.update(appointment_params)
+      redirect_to appointment_path, notice: 'Appointment was updated'
+    end
+  end
+
   private
 
   def appointment_params
-    params.require(:appointment).permit(:doctor_id, :patient_id, :date)
+    params.require(:appointment).permit(:doctor_id, :patient_id, :date, :recommendation, :status)
+  end
+
+  def find_appointment
+    @appointment = Appointment.find(params[:id])
   end
 end
