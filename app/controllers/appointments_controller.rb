@@ -17,7 +17,11 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    @appointments = Appointment.includes(:doctor).where(patient_id: current_user.id)
+    if current_user.role == 'patient'
+      @appointments = Appointment.includes(:doctor).where(patient_id: current_user.id)
+    elsif current_user.role == 'doctor'
+      @appointments = Appointment.includes(:patient).where(doctor_id: current_user.id)
+    end
   end
 
   private
