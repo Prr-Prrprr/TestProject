@@ -1,0 +1,16 @@
+- @appointments.each do |a|
+  .row
+  %br
+  .card
+    .card-header
+      = 'Date: '
+      = a.date
+    .card-body
+      - if current_user.role == 'patient'
+        = 'Doctor: '
+        = a.doctor.username
+      - if current_user.role == 'doctor'
+        = 'Patient: '
+        = a.patient.username
+    .card-footer
+      = 'Status: '

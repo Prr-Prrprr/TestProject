@@ -9,8 +9,8 @@
         - if current_user
           %li.nav-item
             = link_to 'Profile', user_path(current_user), class: 'nav-link'
-        %li.nav-item
-          %a.nav-link{:href => "#"} My appointments
+          %li.nav-item
+            = link_to 'My appointments', appointment_path(current_user), class: 'nav-link'
         %li.nav-item
           = link_to 'Choose type of doctor', categories_path, class: 'nav-link'
         %li.nav-item

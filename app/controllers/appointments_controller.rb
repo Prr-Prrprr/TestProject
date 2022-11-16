@@ -14,7 +14,10 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       redirect_to appointments_path, notice: 'Your appointment successfully created!'
     end
+  end
 
+  def show
+    @appointments = Appointment.includes(:doctor).where(patient_id: current_user.id)
   end
 
   private
