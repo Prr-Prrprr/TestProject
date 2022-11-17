@@ -6,3 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Admin.create(phone: '99999999', password: '111111', username: 'Admin', role: 'admin')
+Doctor.create(username: 'TestDoctor', phone: '12345432', password: '111111', role: 'doctor', category_id: 1)

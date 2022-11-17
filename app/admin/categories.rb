@@ -8,6 +8,6 @@ ActiveAdmin.register Category do
     active_admin_comments
   end
 
-  filter :name, as: :select, collection: Category.all.map{|category| ["#{category.name}", category.id]}
+  filter :name, as: :select, collection: @categories
 
 end
