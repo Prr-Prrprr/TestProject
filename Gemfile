@@ -33,6 +33,7 @@ gem 'haml'
 gem 'simple_calendar'
 gem 'simple_form'
 gem 'rails-controller-testing'
+gem 'phonelib'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

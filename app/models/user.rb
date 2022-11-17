@@ -6,6 +6,8 @@ class User < ApplicationRecord
          
   validates :phone, presence: true
 
+  before_save :normalize_phone
+
   # attr_accessor :phone, :password, :username
 
   def email_required?
@@ -30,5 +32,11 @@ class User < ApplicationRecord
 
   def patient?
     role == 'patient'
+  end
+
+  private
+
+  def normalize_phone
+    self.phone = Phonelib.parse(phone).full_e164.presence
   end
 end

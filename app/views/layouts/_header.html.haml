@@ -11,12 +11,13 @@
             = link_to 'Profile', user_path(current_user), class: 'nav-link'
           %li.nav-item
             = link_to 'My appointments', appointment_path(current_user), class: 'nav-link'
+        - else
+          %li.nav-item
+            = link_to 'Log in', new_user_session_path, class: 'nav-link'
+          %li.nav-item
+            = link_to 'Sign up', new_user_registration_path, class: 'nav-link'
         - if can? :read, Category
           %li.nav-item
             = link_to 'Choose type of doctor', categories_path, class: 'nav-link'
-        %li.nav-item
-          = link_to 'Log in', new_user_session_path, class: 'nav-link'
-        %li.nav-item
-          = link_to 'Sign up', new_user_registration_path, class: 'nav-link'
         %li.nav-item
           = link_to 'Logout', destroy_user_session_path, class: 'nav-link', method: 'delete'
