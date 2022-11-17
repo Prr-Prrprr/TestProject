@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "Create category", type: :request do
-  let(:user) { create(:user) }
+  let(:patient) { create(:patient) }
 
   before do
-    login_as(user, scope: :user)
+    login_as(patient, scope: :user)
     @category = Category.create(name: 'TestCategory')
     @doctor = Doctor.create(username: 'TestDoctor', phone: '12345432', password: '111111', role: 'doctor', category_id: @category.id)
   end
