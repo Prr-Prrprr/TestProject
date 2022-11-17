@@ -4,6 +4,13 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+
+    return unless user.present?
+
+    if user.patient?
+      can :read, Category
+    end
+
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?
