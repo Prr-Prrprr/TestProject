@@ -23,7 +23,7 @@ ActiveAdmin.register Doctor do
   end
 
   filter :phone
-  filter :category_id, as: :select, collection: Category.all.map{|category| ["#{category.name}", category.id]}
+  filter :category_id, as: :select, collection: -> { Category.all.map{|category| ["#{category.name}", category.id]} }.call
   filter :current_sign_in_at
   filter :sign_in_count
   filter :created_at
@@ -32,7 +32,7 @@ ActiveAdmin.register Doctor do
     f.inputs do
       f.input :phone
       f.input :username
-      f.input :category_id, as: :select, collection: Category.all.map{|category| ["#{category.name}", category.id]}
+      f.input :category_id, as: :select, collection: -> { Category.all.map{|category| ["#{category.name}", category.id]} }.call
       f.input :password
       f.input :password_confirmation
     end
